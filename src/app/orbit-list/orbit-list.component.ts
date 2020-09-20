@@ -26,4 +26,8 @@ export class OrbitListComponent implements OnInit {
     });
   }
 
+  zebraStripes(arrayItem): boolean{
+      let index: number =  this.satellites.indexOf(arrayItem); 
+      return index % 2 === 0;
+  }
 }

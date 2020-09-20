@@ -26,3 +26,7 @@ th, td {
     margin: 5px 10px;
     padding: 6px;
 }
+
+.zebra {
+    background-color: #f1a3a3;
+}
