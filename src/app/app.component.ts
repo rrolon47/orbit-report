@@ -19,13 +19,22 @@ export class AppComponent {
        response.json().then(function(data) {
             //console.log(data);//data is an object containing a property named satellites. satellites has a property value of an array of objects
             let fetchedSatellites = data.satellites;
-            let i = 0
-            while(fetchedSatellites.length >= this.sourceList.length){
+           
+            // //For loop attempt to see if it fixes the display list population issue:
+            for (let i=0; i < fetchedSatellites.length; i++){
                let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
                this.sourceList.push(satellite);
-               i += 1; 
             }
-            //First attempt: Not sure how .forEach works 
+
+            // //While loop attempt:
+            // let i = 0
+            // while(fetchedSatellites.length >= this.sourceList.length){
+            //    let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+            //    this.sourceList.push(satellite);
+            //    i += 1; 
+            // }
+            
+            // //First attempt: Not sure how .forEach works 
             // function makeObjectInSourcelist(item) {
             //    let satellite = new Satellite(item.name, item.type, item.launchDate, item.orbitType, item.operational);
             //    this.sourceList.push(satellite);
