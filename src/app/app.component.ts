@@ -52,10 +52,7 @@ export class AppComponent {
       for(let i=0; i < this.sourceList.length; i++) {
          let name = this.sourceList[i].name.toLowerCase();
          let type = this.sourceList[i].type.toLowerCase();
-         if (name.indexOf(searchTerm) >= 0) {
-            matchingSatellites.push(this.sourceList[i]);
-         }
-         if (type.indexOf(searchTerm)>=0) {
+         if (name.indexOf(searchTerm) >= 0 ||type.indexOf(searchTerm)>=0) {
             matchingSatellites.push(this.sourceList[i]);
          }
       }
